@@ -4,7 +4,7 @@ function falaOi() {
     console.log('ola')
 }
 
-falaoi();
+falaOi();
 
 // first-class objects (Objetos de primeira classe)
 // Function expression
