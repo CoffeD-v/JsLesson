@@ -3,6 +3,6 @@
 //const novo = nomes.slice(1,3)
 //console.log(novo)
 
-const nome = 'Rennyson Cavalcante Soares'
+const nome = 'Luiz Felipe'
 const nomes = nome.split(' ')
 console.log(nomes)
