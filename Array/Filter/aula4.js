@@ -16,11 +16,11 @@
 // retorne as pessoas cujo o nome termina com a letra a
 
 const pessoas = [
-    {nome: 'Rennyson', idade: 19},
-    {nome: 'Maria', idade: 10},
-    {nome: 'Fernada', idade: 34},
-    {nome: 'Jose', idade: 76},
-    {nome: 'Joao', idade: 54},
+    {nome: 'Luiz', idade: 19},
+    {nome: 'João', idade: 10},
+    {nome: 'Felipe', idade: 34},
+    {nome: 'Rodrigo', idade: 76},
+    {nome: 'Jonas', idade: 54},
     {nome: 'Wallace', idade: 8},
 ];
 
