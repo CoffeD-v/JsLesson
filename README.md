@@ -16,14 +16,14 @@ Existem várias formas diferentes de laços, mas eles essencialmente fazem a mes
 
 Os possíveis laços de repetição em JavaScript:
 
-- for
-- do...while
-- while
-- label
-- break
-- continue
-- for...in
-- for...of
+- ### for
+- ### do...while
+- ### while
+- ### label
+- ### break
+- ### continue
+- ### for...in
+- ### for...of
 ##
 # Declaração for
 
