@@ -115,3 +115,59 @@ do {
   console.log(i);
 } while (i < 5);
 ```
+##                
+                
+# Declaração while
+Uma declaração while executa suas instruções, desde que uma condição especificada seja avaliada como verdadeira. Segue uma declaração while: 
+
+
+```javascript
+while (condicao)
+  declaracao
+```
+##
+Se a condição se tornar falsa,  a declaração dentro do laço para a execução e o controle é passado para a instrução após o laço.
+
+O teste da condição ocorre antes que o laço seja executado. Desta forma se a condição for verdadeira o laço executará e testará a condição novamente. Se a condição for falsa o laço termina e passa o controle para as instruções após o laço.
+
+Para executar múltiplas declarações, use uma declaração em bloco ({ ... }) para agrupar essas declarações.
+
+```javascript
+do {
+  i += 1;
+  console.log(i);
+} while (i < 5);
+```
+
+# Primeiro exemplo
+#### O while a seguir executará enquanto n for menor que três:
+```javascript
+n = 0;
+x = 0;
+while (n < 3) {
+  n++;
+  x += n;
+}
+```
+
+#### A cada iteração, o laço incrementa n e adiciona este valor para x. Portanto, x e n recebem os seguintes valores:
+
+
+
+
+
+* Depois de executar pela primeira vez: n = 1 e x = 1
+* Depois da segunda vez: n = 2 e x = 3
+* Depois da terceira vez: n = 3 e x = 6
+
+##### Depois de executar pela terceira vez, a condição n < 3 não será mais verdadeira, então o laço encerrará.
+
+# Segundo exemplo
+
+Evite laços infinitos. Tenha certeza que a condição do laço eventualmente será falsa; caso contrário, o laço nunca terminará. O while a seguir executará para sempre pois sua condição nunca será falsa:
+
+```javascript
+while (true) {
+  console.log("Olá, mundo");
+}
+```
