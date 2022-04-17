@@ -171,3 +171,30 @@ while (true) {
   console.log("Olá, mundo");
 }
 ```
+##
+  
+# Declaração label
+Um label provê um identificador que permite que este seja referenciado em outro lugar no seu programa. Por exemplo, você pode usar uma label para identificar um laço, e então usar *break* ou *continue* para indicar quando o programa deverá interromper o laço ou continuar sua execução.
+
+Segue a sintaxe da instrução label:
+
+
+
+```javascript
+label : declaracao
+```
+Um label pode usar qualquer idenficador que não seja uma palavra reservada do JavaScript. Você pode identificar qualquer instrução com um label.
+
+
+
+
+# Exemplo
+#### Neste exemplo, o label markLoop idenfica um laço while.
+```javascript
+markLoop:
+while (theMark == true) {
+   facaAlgo();
+}
+```
+
+
