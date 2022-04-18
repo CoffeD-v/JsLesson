@@ -1,4 +1,58 @@
 
+# Controle de Fluxo e Manipulação de Erro
+
+O JavaScript suporta um conjunto compacto de declarações, especificamente de fluxo de controle, que você pode utilizar para atribuir uma grande interatividade a páginas web. 
+
+Veja a Referência do JavaScript para detalhes sobre as declarações mostradas neste capítulo. No código em JavaScript, o caractere ponto e vírgula ( ; ) é utilizado para separar declarações.
+
+Toda expressão também é uma declaração. Veja Expressões e Operadores para informações completas sobre expressões.
+
+##
+# Declaração em bloco
+
+#### Uma declaração em bloco é utilizada para agrupar declarações. O bloco é delimitado por um par de chaves:
+
+```
+{
+   declaracao_1;
+   declaracao_2;
+   .
+   .
+   .
+   declaracao_n;
+}
+```
+
+# Exemplo
+
+Declarações em bloco são utilizadas geralmente com declarações de fluxo de controle *(ex. if, for, while)*.
+
+```
+while (x < 10) {
+  x++; //{ x++; } é a declaração de bloco.
+}
+```
+
+#### **Importante:** Antes de ECMAScript 6 o JavaScript não possuía escopo de bloco. Variáveis introduzidas dentro de um bloco possuem como escopo a função ou o script em que o bloco está contido, e, definir tais variáveis tem efeito muito além do bloco em si. Em outras palavras, declarações de bloco não introduzem um escopo. Embora blocos "padrão" sejam uma sintaxe válida não utilize-os, em JavaScript, pensando que funcionam como em C ou Java porque eles não funcionam da maneira que você acredita. Por exemplo:
+
+```
+var x = 1;
+{
+  var x = 2;
+}
+console.log(x); // exibe 2
+
+```
+
+* Este código exibe 2 porque a declaração var x dentro do bloco possui o mesmo escopo que a declaração var x antes do bloco. Em C ou Java, o código equivalente exibiria 1.
+
+##
+## Declarações condicionais
+
+Uma declaração condicional é um conjunto de comandos que são executados caso uma condição especificada seja verdadeira. O JavaScript suporta duas declarações condicionais: **if...else** e **switch**.
+
+##
+
 # Laços e iterações
 
 Laços oferecem um jeito fácil e rápido de executar uma ação repetidas vezes.
