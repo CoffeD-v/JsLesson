@@ -313,6 +313,47 @@ checkiandj:
 ## 
 
 
+# Declaração for...in
+A declaração *for...in* executa iterações a partir de uma variável específica, percorrendo todas as propriedades de um objeto.
+
+Para cada propriedade distinta, o JavaScript executará uma iteração. Segue a sintaxe:
+```
+for (variavel in objeto) {
+  declaracoes
+}
+```
+
+
+## Exemplo
+
+A função a seguir recebe em seu argumento um objeto e o nome deste objeto. Então executará uma iteração para cada elemento e retornará uma lista de string, que irá conter o nome da propriedade e seu valor.
+
+
+
+```javascript
+function dump_props(obj, obj_name) {
+  var result = "";
+  for (var i in obj) {
+    result += obj_name + "." + i + " = " + obj[i] + "<br>";
+  }
+  result += "<hr>";
+  return result;
+}
+
+```
+#### Para um objeto chamado car com propriedades make e model, o resultado será:
+
+```
+car.make = Ford
+car.model = Mustang
+
+```
+### Arrays
+
+Embora seja tentador usar esta forma para interagir com os elementos de um Array, a declaração for...in irá retornar o nome pré-definido da propriedade ao invés do seu index numérico. Assim é melhor usar o tradicional for com index numérico quando interagir com arrays, pois o for...in interage com as propriedades definidas pelo programador ao invés dos elementos do array.
+
+## 
+
                          
 
 
