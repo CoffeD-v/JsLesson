@@ -196,5 +196,60 @@ while (theMark == true) {
    facaAlgo();
 }
 ```
+## 
+  
+# Declaração break
+
+Use break para terminar laços, *switch*, ou um conjunto que utiliza label.
+
+
+* Quando você utiliza *break* sem um label, ele encerrará imediatamente o laço mais interno *while*, *do-while*, *for*, ou *switch* e transferirá o controle para a próxima instrução.
+
+* Quando você utiliza break com um label, ele encerrará o label específico.
+
+#### Segue a sintaxe do break:
+
+ - break;
+ - break label;
+
+ Na primeira opção será encerrado o laço de repetição mais interno ou switch. Já na segunda opção será encerrada o bloco de código referente a label.
+  
+  
+## Primeiro exemplo
+
+O exemplo a seguir percorre os elementos de um array até que ele encontre o índice do elemento que possui o valor contido em theValue:
+
+
+```javascript
+for (i = 0; i < a.length; i++) {
+  if (a[i] == theValue) {
+    break;
+  }
+}
+```
+
+
+## Segundo exemplo
+
+```javascript
+var x = 0;
+var z = 0
+labelCancelaLaco: while (true) {
+  console.log("Laço exterior: " + x);
+  x += 1;
+  z = 1;
+  while (true) {
+    console.log("Laço interior: " + z);
+    z += 1;
+    if (z === 10 && x === 10) {
+      break labelCancelaLaco;
+    } else if (z === 10) {
+      break;
+    }
+  }
+}
+```
+## 
+
 
 
