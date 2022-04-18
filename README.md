@@ -354,6 +354,37 @@ Embora seja tentador usar esta forma para interagir com os elementos de um Array
 
 ## 
 
-                         
+
+# Declaração for...of
+ A declaração *for...of* cria uma laço com objetos interativos ((incluindo, Array, Map, Set, assim por conseguinte ), executando uma iteração para o valor de cada propriedade distinta.
+
+```
+for (variavel of objeto) {
+  declaracoes
+}
+```
+
+O exemplo a seguir mostra a diferença entre o for...of e o for...in. Enquanto o for...in interage com o nome das propriedades, o for...of interage com o valor das propriedades.
+
+
+
+## Exemplo
+
+
+
+
+```javascript
+let arr = [3, 5, 7];
+arr.foo = "hello";
+
+for (let i in arr) {
+   console.log(i); // logs "0", "1", "2", "foo"
+}
+
+for (let i of arr) {
+   console.log(i); // logs "3", "5", "7"
+}
+```
+##                          
 
 
