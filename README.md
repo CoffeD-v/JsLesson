@@ -153,6 +153,71 @@ function verifiqueDados() {
 ```
 ## 
 
+
+# Declaração switch
+Uma declaração switch permite que um programa avalie uma expressão e tente associar o valor da expressão ao rótulo de um case. Se uma correspondência é encontrada, o programa executa a declaração associada. Uma declaração switch se parece com o seguinte:
+
+
+
+```
+switch (expressao) {
+   case rotulo_1:
+      declaracoes_1
+      [break;]
+   case rotulo_2:
+      declaracoes_2
+      [break;]
+   ...
+   default:
+      declaracoes_padrao
+      [break;]
+}
+```
+
+O programa primeiramente procura por uma cláusula case com um rótulo que corresponda ao valor da expressão e então transfere o controle para aquela cláusula, executando as declaracoes associadas. 
+
+ Se nenhum rótulo correspondente é encontrado, o programa procura pela cláusula opcional default e, se encontrada, transfere o controle àquela cláusula, executando as declarações associadas.
+
+ Se nenhuma cláusula default é encontrada, o programa continua a execução a partir da declaracao seguinte ao switch. Por convenção, a cláusula default é a última, mas não é necessário que seja assim.
+
+A instrução break associada a cada cláusula case, garante que o programa sairá do switch assim que a declaração correspondente for executada e que continuará a execução a partir da declaração seguinte ao switch. Se a declaração break for omitida, o programa continua a execução a partir da próxima declaração dentro do switch.
+
+
+
+## Exemplo
+
+No exemplo a seguir, se tipofruta for avaliada como "Banana", o programa faz a correspondência do valor com case "Banana" e executa a declaração associada. Quando o break é encontrado, o programa termina o switch e executa a declaração seguinte ao condicional. Se o break fosse omitido, a declaração de case "Cereja" também seria executada.
+
+
+
+
+```javascript
+switch (tipofruta) {
+   case "Laranja":
+      console.log("O quilo da laranja está R$0,59.<br>");
+      break;
+   case "Maçã":
+      console.log("O quilo da maçã está R$0,32.<br>");
+      break;
+   case "Banana":
+      console.log("O quilo da banana está R$0,48.<br>");
+      break;
+   case "Cereja":
+      console.log("O quilo da cereja está R$3,00.<br>");
+      break;
+   case "Manga":
+      console.log("O quilo da manga está R$0,56.<br>");
+       break;
+   case "Mamão":
+      console.log("O quilo do mamão está R$2,23.<br>");
+      break;
+   default:
+      console.log("Desculpe, não temos " + tipofruta + ".<br>");
+}
+console.log("Gostaria de mais alguma coisa?<br>");
+```
+## 
+
 # Laços e iterações
 
 Laços oferecem um jeito fácil e rápido de executar uma ação repetidas vezes.
