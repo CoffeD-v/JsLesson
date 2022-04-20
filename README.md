@@ -53,6 +53,106 @@ Uma declaração condicional é um conjunto de comandos que são executados caso
 
 ##
 
+# Declaração if...else
+Use a declaração **if** para executar alguma declaração caso a condição lógica for verdadeira. Use a cláusula opcional else para executar alguma declaração caso a condição lógica for falsa. Uma declaração **if** é declarada da seguinte maneira:
+
+
+```
+if (condicao) {
+  declaracao_1;
+} else {
+  declaracao_2;
+}
+```
+
+onde *condicao* pode ser qualquer expressão que seja avaliada como verdadeira ou falsa. Veja Boolean para uma explicação sobre o que é avaliado como true e false. Se condicao for avaliada como verdadeira, declaracao_1 é executada; caso contrário, declaracao_2 é executada. declaracao_1 e declaracao_2 podem ser qualquer declaração, incluindo declarações if aninhadas.
+
+#### Você pode também combinar declarações utilizando else if para obter várias condições testadas em sequência, como o seguinte:
+
+```
+if (condicao) {
+  declaracao_1;
+} else if (condicao_2) {
+  declaracao_2;
+} else if (condicao_n) {
+  declaracao_n;
+} else {
+  declaracao_final;
+}
+```
+
+Para executar várias declarações, agrupe-as em uma declaração em bloco ({ ... }). Em geral, é uma boa prática sempre utilizar declarações em bloco, especialmente ao aninhar declarações if:
+
+```
+if (condicao) {
+    declaracao_1_executada_se_condicao_for_verdadeira;
+    declaracao_2_executada_se_condicao_for_verdadeira;
+} else {
+    declaracao_3_executada_se_condicao_for_falsa;
+    declaracao_4_executada_se_condicao_for_falsa;
+}
+```
+
+* Recomenda-se não utilizar atribuições simples em uma expressão condicional porque o símbolo de atribuição poderia ser confundido com o de igualdade ao dar uma olhada no código. Por exemplo, não utilize o seguinte código:
+
+```
+if (x = y) {
+  /* faça a coisa certa */
+}
+```
+
+Caso tenha que utilizar uma atribuição em uma expressão condicional, uma prática comum é colocar parênteses adicionais em volta da atribuição. Por exemplo:
+
+```
+if ((x = y)) {
+  /* faça a coisa certa */
+}
+```
+
+### Valores avaliados como falsos
+Os seguintes valores são avaliados como falsos:
+
+* false 
+* undefined
+* null
+* 0
+* NaN
+* ("")
+
+###
+
+Todos os outros valores, incluindo todos os objetos, são avaliados como verdadeiros quando passados para uma declaração condicional.
+
+Não confunda os valores booleanos primitivos true e false com os valores de true e false do objeto Boolean. Por exemplo:
+
+```
+var b = new Boolean(false);
+if (b) // esta condição é avaliada como verdadeira
+if (b == true) // esta condição é avaliada como falsa 
+```
+
+
+
+## Exemplo
+
+No exemplo a seguir, a função verifiqueDados retorna verdadeiro se o número de caracteres em um objeto Text for três; caso contrário, exibe um alerta e retorna falso.
+
+
+
+
+```javascript
+function verifiqueDados() {
+  if (document.form1.tresCaracteres.value.length == 3) {
+    return true;
+  } else {
+    alert("Informe exatamente três caracteres. " +
+      document.form1.tresCaracteres.value + " não é válido.");
+    return false;
+  }
+}
+```
+## 
+
 # Laços e iterações
 
 Laços oferecem um jeito fácil e rápido de executar uma ação repetidas vezes.
