@@ -606,8 +606,4 @@ for (let i of arr) {
 ```
 ##                          
 
-## Reference para manipulação de arrays!
-  <a href="https://medium.com/@viniciusdacal/javascript-array-map-filter-e-reduce-tr%C3%AAs-m%C3%A9todos-para-manipula%C3%A7%C3%A3o-de-arrays-3fa9aebaf7fe" target="_blank">
- <img align="center" src="https://img.shields.io/badge/-JsLesson-05122A?style=flat&logo=medium" alt="content"/>
-</a>
 
