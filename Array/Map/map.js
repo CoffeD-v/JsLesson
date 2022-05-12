@@ -2,8 +2,8 @@
 
 const numeros = [5,50,80,1,2,3,5,8,7,11,15,22,27]
 
-//const dobraNum = numeros.map(dobrar => dobrar * 2)
-//console.log(dobraNum)
+const dobraNum = numeros.map(dobrar => dobrar * 2)
+console.log(dobraNum)
 
 
 
@@ -13,12 +13,12 @@ const numeros = [5,50,80,1,2,3,5,8,7,11,15,22,27]
 // Adicione uma chave id em cada Objeto
 
 const pessoas = [
-    {nome: 'Rennyson', idade: 19},
-    {nome: 'Maria', idade: 10},
-    {nome: 'Fernada', idade: 34},
-    {nome: 'Jose', idade: 76},
-    {nome: 'Joao', idade: 54},
-    {nome: 'Wallace', idade: 8},
+    {nome: 'Luiz', idade: 16},
+    {nome: 'Maria', idade: 16},
+    {nome: 'Ronaldo', idade: 34},
+    {nome: 'Joseph', idade: 18},
+    {nome: 'Joao Carlos', idade: 54},
+    {nome: 'Wagner', idade: 38},
 ];
 
 //const idadeNome = pessoas.map(obj =>({idade:obj.idade}))
