@@ -62,20 +62,20 @@ const books = [{
 ]
 
 
-//All books rated over 4.3:
+//Todos os livros com classificação acima de 4,3:
 const goodBooks = books.filter(b => b.rating > 4.3);
 
-// All books with fantasy as a genre:
+// Todos os livros com fantasia como gênero:
 const fantasyBooks = books.filter(book => (
   book.genres.includes('fantasy')
 ))
 
-// all books that are either short stories or essays:
+// Todos os livros que são contos ou ensaios:
 const shortForm = books.filter(book => (
   book.genres.includes('short stories') || book.genres.includes('essays')
 ))
 
-// Simple search functionality:
+// Funcionalidade de pesquisa simples:
 const query = 'The';
 const results = books.filter(book => {
   const title = book.title.toLowerCase();
