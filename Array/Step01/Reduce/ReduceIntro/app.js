@@ -1,5 +1,5 @@
 const nums = [3, 4, 5, 6, 7];
-// To multiply all values in nums:
+//Para multiplicar todos os valores em números:
 const product = nums.reduce((total, currentVal) => {
   return total * currentVal;
 });
@@ -10,4 +10,4 @@ const product = nums.reduce((total, currentVal) => {
 // 60            6           360
 // 360           7           2520
 
-//Final Return Value: 2520
+//Numero final retornado 2520
