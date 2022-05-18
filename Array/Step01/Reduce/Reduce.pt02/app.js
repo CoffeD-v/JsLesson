@@ -1,18 +1,18 @@
 const grades = [87, 64, 96, 92, 88, 99, 73, 70, 64];
 
-// One approach to find max using reduce:
+// Uma abordagem para encontrar o máximo usando reduzir:
 // const maxGrade = grades.reduce((max, currVal) => {
 //   if (currVal > max) return currVal;
 //   return max;
 // });
 
-// A shorter version using Math.max:
+// Uma versão mais curta usando Math.max:
 const maxGrade = grades.reduce((max, currVal) => {
   return Math.max(max, currVal)
 });
-// Finding the min value using Math.min: 
+// Encontrar o valor minimo usando o Math.min:
 const minGrade = grades.reduce((min, currVal) => (
-  //using implicit return for variety's sake
+  //utilizando o retorno implícito para o bem da variedade
   Math.min(min, currVal)
 ));
 
@@ -22,8 +22,8 @@ const minGrade = grades.reduce((min, currVal) => (
 // 96        92         96
 /// etc.
 
-// We can specify an initial value as the 2nd argument to reduce:
+// Podemos especificar um valor inicial como o 2º argumento a reduzir:
 // arr.reduce(reducerFunction, initialValue)
 const total = [10, 20, 30, 40, 50].reduce((sum, currVal) => {
   return sum + currVal;
-}, 1000) //sum starts at 1000, then each element is added to it
+}, 1000) //sum começa em 1000, depois cada elemento é adicionado a ele
