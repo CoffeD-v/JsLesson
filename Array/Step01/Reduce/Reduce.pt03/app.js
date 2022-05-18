@@ -1,6 +1,6 @@
 const votes = ['y', 'y', 'n', 'y', 'n', 'y', 'n', 'y', 'n', 'n', 'n', 'y', 'y'];
 
-// To tally the votes:
+// Para contar os votos:
 // const results = votes.reduce((tally, val) => {
 //   if (tally[val]) {
 //     tally[val]++
@@ -77,7 +77,7 @@ const books = [{
     genres: ['fiction']
   }
 ]
-// To group books by rating: 
+// Para agrupar livros por classificação:
 const groupedByRatings = books.reduce((groupedBooks, book) => {
   const key = Math.floor(book.rating);
   if (!groupedBooks[key]) groupedBooks[key] = [];
