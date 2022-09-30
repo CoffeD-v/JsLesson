@@ -1,117 +1,104 @@
 
+# Coffeloper Javascript Lesson
 
-# Controle de Fluxo e Manipulação de Erro
+[:brazil: Clique aqui para acessar a versão em português.](./README.pt-br.md)
 
-O JavaScript suporta um conjunto compacto de declarações, especificamente de fluxo de controle, que você pode utilizar para atribuir uma grande interatividade a páginas web. 
+# Flow Control and Error Handling
 
-Veja a Referência do JavaScript para detalhes sobre as declarações mostradas neste capítulo. No código em JavaScript, o caractere ponto e vírgula ( ; ) é utilizado para separar declarações.
+JavaScript supports a compact set of declarations, specifically control flow, that you can use to assign great interactivity to web pages.
 
-Toda expressão também é uma declaração. Veja Expressões e Operadores para informações completas sobre expressões.
+See the JavaScript Reference for details on the declarations shown in this chapter. In JavaScript code, the semicolon character ( ; ) is used to separate declarations.
+
+Every expression is also a declaration. See Expressions and Operators for complete information about expressions.
 
 ##
-# Declaração em bloco
+# Block declaration
 
-#### Uma declaração em bloco é utilizada para agrupar declarações. O bloco é delimitado por um par de chaves:
+#### A block declaration is used to group declarations. The block is delimited by a pair of braces
 
 ```
 {
-   declaracao_1;
-   declaracao_2;
-   .
-   .
-   .
-   declaracao_n;
+ declaration_1;
+ declaration_2;
+.
+.
+.
+ declaration_n;
 }
 ```
 
-# Exemplo
+# Example
 
-Declarações em bloco são utilizadas geralmente com declarações de fluxo de controle *(ex. if, for, while)*.
+Block statements are generally used with control flow statements *(eg if, for, while)*.
 
 ```
 while (x < 10) {
-  x++; //{ x++; } é a declaração de bloco.
+  x++; //{ x++; } is the block declaration.
 }
 ```
 
-#### **Importante:** Antes de ECMAScript 6 o JavaScript não possuía escopo de bloco. Variáveis introduzidas dentro de um bloco possuem como escopo a função ou o script em que o bloco está contido, e, definir tais variáveis tem efeito muito além do bloco em si. Em outras palavras, declarações de bloco não introduzem um escopo. Embora blocos "padrão" sejam uma sintaxe válida não utilize-os, em JavaScript, pensando que funcionam como em C ou Java porque eles não funcionam da maneira que você acredita. Por exemplo:
+#### **Important:** Prior to ECMAScript 6 JavaScript was not block scoped. Variables introduced within a block are scoped to the function or script in which the block is contained, and defining such variables has an effect far beyond the block itself. In other words, block declarations do not introduce a scope. Although "standard" blocks are valid syntax, don't use them in JavaScript, thinking they work like C or Java because they don't work the way you think. For example
 
 ```
 var x = 1;
 {
   var x = 2;
 }
-console.log(x); // exibe 2
+console.log(x); // display 2
 
 ```
 
-* Este código exibe 2 porque a declaração var x dentro do bloco possui o mesmo escopo que a declaração var x antes do bloco. Em C ou Java, o código equivalente exibiria 1.
+* This code displays 2 because the var x declaration inside the block has the same scope as the var x declaration before the block. In C or Java, the equivalent code would display 1.
 
 ##
-## Declarações condicionais
+## Conditional statements
 
-Uma declaração condicional é um conjunto de comandos que são executados caso uma condição especificada seja verdadeira. O JavaScript suporta duas declarações condicionais: **if...else** e **switch**.
+A conditional statement is a set of statements that are executed if a specified condition is true. JavaScript supports two conditional statements: **if...else** and **switch**.
 
 ##
 
-# Declaração if...else
-Use a declaração **if** para executar alguma declaração caso a condição lógica for verdadeira. Use a cláusula opcional else para executar alguma declaração caso a condição lógica for falsa. Uma declaração **if** é declarada da seguinte maneira:
+# if...else statement
+Use the **if** statement to execute some statement if the logical condition is true. Use the optional else clause to execute some statement if the logical condition is false. An **if** statement is declared as follows:
 
 
 ```
-if (condicao) {
-  declaracao_1;
+if (condition) {
+  declaration_1;
 } else {
-  declaracao_2;
+  declaration_2;
 }
 ```
 
-onde *condicao* pode ser qualquer expressão que seja avaliada como verdadeira ou falsa. Veja Boolean para uma explicação sobre o que é avaliado como true e false. Se condicao for avaliada como verdadeira, declaracao_1 é executada; caso contrário, declaracao_2 é executada. declaracao_1 e declaracao_2 podem ser qualquer declaração, incluindo declarações if aninhadas.
+where *condition* can be any expression that evaluates to true or false. See Boolean for an explanation of what evaluates to true and false. If condition evaluates to true, statement_1 is executed; otherwise, statement_2 is executed. statement_1 and statement_2 can be any statement, including nested if statements.
 
-#### Você pode também combinar declarações utilizando else if para obter várias condições testadas em sequência, como o seguinte:
+#### You can also combine statements using else if to get multiple conditions tested in sequence, like the following:
 
 ```
-if (condicao) {
-  declaracao_1;
-} else if (condicao_2) {
-  declaracao_2;
-} else if (condicao_n) {
-  declaracao_n;
+if (condition) {
+  declaration_1;
+} else if (condition_2) {
+  declaration_2;
+} else if (condition_n) {
+  declaration_n;
 } else {
-  declaracao_final;
+  final_statement;
 }
 ```
 
-Para executar várias declarações, agrupe-as em uma declaração em bloco ({ ... }). Em geral, é uma boa prática sempre utilizar declarações em bloco, especialmente ao aninhar declarações if:
+To execute multiple statements, group them into a block statement ({ ... }). In general, it is good practice to always use block statements, especially when nesting if statements:
 
 ```
-if (condicao) {
-    declaracao_1_executada_se_condicao_for_verdadeira;
-    declaracao_2_executada_se_condicao_for_verdadeira;
-} else {
-    declaracao_3_executada_se_condicao_for_falsa;
-    declaracao_4_executada_se_condicao_for_falsa;
-}
-```
-
-* Recomenda-se não utilizar atribuições simples em uma expressão condicional porque o símbolo de atribuição poderia ser confundido com o de igualdade ao dar uma olhada no código. Por exemplo, não utilize o seguinte código:
-
-```
-if (x = y) {
-  /* faça a coisa certa */
-}
-```
-
-Caso tenha que utilizar uma atribuição em uma expressão condicional, uma prática comum é colocar parênteses adicionais em volta da atribuição. Por exemplo:
-
-```
+if (condition) {
+    declaration_1_executed_se_condition_for_true;
+…```
 if ((x = y)) {
-  /* faça a coisa certa */
+  /* do the right thing */
 }
 ```
 
-### Valores avaliados como falsos
-Os seguintes valores são avaliados como falsos:
+### Values ​​evaluated as false
+
+The following values ​​evaluate to false:
 
 * false 
 * undefined
@@ -122,70 +109,66 @@ Os seguintes valores são avaliados como falsos:
 
 ###
 
-Todos os outros valores, incluindo todos os objetos, são avaliados como verdadeiros quando passados para uma declaração condicional.
+All other values, including all objects, evaluate to true when passed to a conditional statement.
 
-Não confunda os valores booleanos primitivos true e false com os valores de true e false do objeto Boolean. Por exemplo:
+Do not confuse the Boolean primitive values ​​true and false with the Boolean object's true and false values. For example:
 
 ```
 var b = new Boolean(false);
-if (b) // esta condição é avaliada como verdadeira
-if (b == true) // esta condição é avaliada como falsa 
+if (b) // this condition evaluates to true
+if (b == true) // this condition evaluates to false
 ```
+## Example
 
-
-
-## Exemplo
-
-No exemplo a seguir, a função verifiqueDados retorna verdadeiro se o número de caracteres em um objeto Text for três; caso contrário, exibe um alerta e retorna falso.
+In the following example, the checkData function returns true if the number of characters in a Text object is three; otherwise, displays an alert and returns false.
 
 
 
 
 ```javascript
-function verifiqueDados() {
-  if (document.form1.tresCaracteres.value.length == 3) {
+function checkData() {
+  if (document.form1.tresCharacters.value.length == 3) {
     return true;
   } else {
-    alert("Informe exatamente três caracteres. " +
-      document.form1.tresCaracteres.value + " não é válido.");
+    alert("Enter exactly three characters. " +
+      document.form1.tresCharacters.value + " not valid.");
     return false;
   }
 }
 ```
-## 
+
+##
 
 
-# Declaração switch
-Uma declaração switch permite que um programa avalie uma expressão e tente associar o valor da expressão ao rótulo de um case. Se uma correspondência é encontrada, o programa executa a declaração associada. Uma declaração switch se parece com o seguinte:
+# Switch statement
+A switch statement allows a program to evaluate an expression and attempt to associate the expression's value with a case label. If a match is found, the program executes the associated statement. A switch statement looks like the following:
 
 
 
 ```
-switch (expressao) {
-   case rotulo_1:
-      declaracoes_1
+switch(expression) {
+   case label_1:
+      declarations_1
       [break;]
-   case rotulo_2:
-      declaracoes_2
+   case label_2:
+      declarations_2
       [break;]
    ...
    default:
-      declaracoes_padrao
+      standard_declarations
       [break;]
 }
 ```
 
-O programa primeiramente procura por uma cláusula case com um rótulo que corresponda ao valor da expressão e então transfere o controle para aquela cláusula, executando as declaracoes associadas. 
+The program first looks for a case clause with a label that matches the value of the expression and then transfers control to that clause, executing the associated statements.
 
- Se nenhum rótulo correspondente é encontrado, o programa procura pela cláusula opcional default e, se encontrada, transfere o controle àquela cláusula, executando as declarações associadas.
+ If no matching label is found, the program looks for the optional default clause and, if found, transfers control to that clause, executing the associated statements.
 
- Se nenhuma cláusula default é encontrada, o programa continua a execução a partir da declaracao seguinte ao switch. Por convenção, a cláusula default é a última, mas não é necessário que seja assim.
+If no default clause is found, the program continues execution from the statement following the switch. By convention, the default clause is last, but it doesn't have to be.
 
-A instrução break associada a cada cláusula case, garante que o programa sairá do switch assim que a declaração correspondente for executada e que continuará a execução a partir da declaração seguinte ao switch. Se a declaração break for omitida, o programa continua a execução a partir da próxima declaração dentro do switch.
+The break statement associated with each case clause guarantees that the program will exit the switch as soon as the corresponding statement is executed and that it will continue execution from the statement following the switch. If the break statement is omitted, the program continues execution from the next statement within the switch.
 
-
-
-## Exemplo
+## Example
 
 No exemplo a seguir, se tipofruta for avaliada como "Banana", o programa faz a correspondência do valor com case "Banana" e executa a declaração associada. Quando o break é encontrado, o programa termina o switch e executa a declaração seguinte ao condicional. Se o break fosse omitido, a declaração de case "Cereja" também seria executada.
 
@@ -606,5 +589,3 @@ for (let i of arr) {
 }
 ```
 ##                          
-
-
