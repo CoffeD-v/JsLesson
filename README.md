@@ -170,7 +170,7 @@ The break statement associated with each case clause guarantees that the program
 
 ## Example
 
-No exemplo a seguir, se tipofruta for avaliada como "Banana", o programa faz a correspondência do valor com case "Banana" e executa a declaração associada. Quando o break é encontrado, o programa termina o switch e executa a declaração seguinte ao condicional. Se o break fosse omitido, a declaração de case "Cereja" também seria executada.
+In the following example, if typefruit is evaluated as "Banana", the program matches the value with case "Banana" and executes the associated statement. When the break is encountered, the program terminates the switch and executes the statement following the conditional. If the break is omitted, the case statement "Cherry" is also executed.
 
 
 
@@ -202,9 +202,9 @@ console.log("Gostaria de mais alguma coisa?<br>");
 ```
 ## 
 
-# Laços e iterações
+# Loops and iterations
 
-Laços oferecem um jeito fácil e rápido de executar uma ação repetidas vezes.
+Loops provide a quick and easy way to perform an action over and over again. 208
 
 ```javascript
 var passo;
