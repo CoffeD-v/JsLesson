@@ -176,30 +176,31 @@ In the following example, if typefruit is evaluated as "Banana", the program mat
 
 
 ```javascript
-switch (tipofruta) {
-   case "Laranja":
-      console.log("O quilo da laranja está R$0,59.<br>");
+switch (typefruit) {
+   case "Orange":
+      console.log("The orange kilo is R$0.59.<br>");
       break;
-   case "Maçã":
-      console.log("O quilo da maçã está R$0,32.<br>");
+   case "Apple":
+      console.log("The apple kilo is R$0.32.<br>");
       break;
    case "Banana":
-      console.log("O quilo da banana está R$0,48.<br>");
+      console.log("The kilo of banana is R$0.48.<br>");
       break;
-   case "Cereja":
-      console.log("O quilo da cereja está R$3,00.<br>");
+   case "Cherry":
+      console.log("The kilo of the cherry is R$3.00.<br>");
       break;
-   case "Manga":
-      console.log("O quilo da manga está R$0,56.<br>");
+   case "Mango":
+      console.log("The kilo of the mango is R$0.56.<br>");
        break;
-   case "Mamão":
-      console.log("O quilo do mamão está R$2,23.<br>");
+   case "Mamao":
+      console.log("The kilo of papaya is R$2.23.<br>");
       break;
    default:
-      console.log("Desculpe, não temos " + tipofruta + ".<br>");
+      console.log("Sorry, we don't have " + fruit type + ".<br>");
 }
-console.log("Gostaria de mais alguma coisa?<br>");
+console.log("Would you like anything else?<br>");
 ```
+
 ## 
 
 # Loops and iterations
@@ -207,17 +208,17 @@ console.log("Gostaria de mais alguma coisa?<br>");
 Loops provide a quick and easy way to perform an action over and over again. 208
 
 ```javascript
-var passo;
-for (passo = 0; passo < 5; passo++) {
-  // Executa 5 vezes, com os valores de passos de 0 a 4.
-  console.log('Ande um passo para o leste');
+var step;
+for (step = 0; step < 5; step++) {
+  // Execute 5 times, with step values ​​from 0 to 4.
+  console.log('Walk one step east');
 }
 ```
 
 ## 
-Existem várias formas diferentes de laços, mas eles essencialmente fazem a mesma coisa: repetir uma ação múltiplas vezes ( inclusive você poderá repetir 0 vezes).  Há várias situações em que é mais fácil resolver um problema utilizando um determinado tipo de laço do que outros.
+There are several different forms of loops, but they essentially do the same thing: repeat an action multiple times (you can even repeat 0 times). There are many situations in which it is easier to solve a problem using one type of loop than others.
 
-Os possíveis laços de repetição em JavaScript:
+Possible loops in JavaScript:
 
 - ### for
 - ### do...while
@@ -228,55 +229,56 @@ Os possíveis laços de repetição em JavaScript:
 - ### for...in
 - ### for...of
 ##
-# Declaração for
+# Declaration for
 
-Um laço for é repetido até que a condição especificada seja falsa. O laço for no JavaScript é similar ao Java e C. 
-- Uma declaração for é feita da seguinte maneira:
+A for loop is repeated until the specified condition is false. The for loop in JavaScript is similar to Java and C.
+
+- A for statement is made as follows:
 
 
 ```javascript
-for ([expressaoInicial]; [condicao]; [incremento])
-  declaracao
+for ([initialExpression]; [condition]; [increment])
+  declaration
 }
 ```
 
 
 
-## Quando um for é executado, ocorre o seguinte:
+## When a for is executed, the following occurs:
 
-* A expressão expressao Inicial é inicializada e, caso possível, é executada. Normalmente essa expressão inicializa um ou mais contadores, mas a sintaxe permite expressões de qualquer grau de complexidade. Podendo conter também declaração de variáveis.
-* A expressão condicao é avaliada. caso o resultado de condicao seja verdadeiro, o laço é executado. Se o valor de condicao é falso, então o laço terminará. Se a expressão condicao é omitida, a condicao é assumida como verdadeira.
-* A instrução é executada. Para executar múltiplas declarações, use uma declaração em bloco ({ ... }) para agrupá-las.
-* A atualização da expressão incremento, se houver, executa, e retorna o controle para o passo 2.
+* The expression Initial expression is initialized and, if possible, is executed. Normally this expression initializes one or more counters, but the syntax allows expressions of any degree of complexity. It may also contain declaration of variables.
+* The condition expression is evaluated. if the condition result is true, the loop is executed. If the condition value is false, then the loop will terminate. If the condition expression is omitted, the condition is assumed to be true.
+* The instruction is executed. To execute multiple statements, use a block statement ({ ... }) to group them together.
+* Update the increment expression, if any, executes, and returns control to step 2.
 
 
-## Exemplo
+## Example
 
-A função a seguir contém uma declaração for que contará o número de opções selecionadas em uma lista (um elemento *<select>* permite várias seleções). Dentro do for é declarado uma váriavel i inicializada com zero. A declaração for verifica se i é menor que o número de opções no elemento *<select>*, executa sucessivas declaração  if, e incrementa i de um em um a cada passagem pelo laço.
+The following function contains a for statement that will count the number of options selected in a list (a *<select>* element allows multiple selections). Inside the for is declared a variable i initialized to zero. The for statement checks if i is less than the number of options in the *<select>* element, executes successive if statements, and increments i by one each time it passes through the loop.
 
 
 ```javascript
 <form name="selectForm">
   <p>
-    <label for="tipoMusica">Escolha alguns tipos de música, em seguida, clique no botão abaixo:</label>
-    <select id="tipoMusica" name="tipoMusica" multiple="multiple">
+    <label for="typeMusic">Choose some types of music, then click the button below:</label>
+    <select id="typeMusic" name="typeMusic" multiple="multiple">
       <option selected="selected">R&B</option>
       <option>Jazz</option>
       <option>Blues</option>
       <option>New Age</option>
-      <option>Classico</option>
-      <option>Ópera</option>
+      <option>Classic</option>
+      <option>Opera</option>
     </select>
   </p>
-  <p><input id="btn" type="button" value="Quantos foram selecionados?" /></p>
+  <p><input id="btn" type="button" value="how many were selected?" /></p>
 </form>
 
 <script>
 function howMany(selectObject) {
-  var numeroSelecionadas = 0;
+  var numberSelected = 0;
   for (var i = 0; i < selectObject.options.length; i++) {
     if (selectObject.options[i].selected) {
-      numeroSelecionadas++;
+      numberSelected++;
     }
   }
   return numeroSelecionadas;
@@ -284,21 +286,22 @@ function howMany(selectObject) {
 
 var btn = document.getElementById("btn");
 btn.addEventListener("click", function(){
-  alert('Total de opções selecionadas: ' + howMany(document.selectForm.tipoMusica))
+  alert('Total options selected: ' + howMany(document.selectForm.typeMusic))
 });
 </script>
 
 ```
   
 ##
-# Declaração do...while
-A instrução do...while repetirá até que a condição especificada seja falsa.
 
+# do...while declaration
+
+The do...while statement will repeat until the specified condition is false.
 
 ```javascript
-do
-  declaracao
-while (condicao);
+of
+declaration
+while(condition);
 }
 ```
 
@@ -306,44 +309,44 @@ while (condicao);
 
 ##
 
-A instrução será executada uma vez antes da condição ser verificada. Para executar multiplas instruções utilize uma declaração de bloco *({ ... })* para agrupá-las. Caso a condicao seja verdadeira, então o laço será executado novamente. Ao final de cada execução, a condicao é verificada. Quando a condição contida no while for falsa a execução do laço é terminada e o controle é passado para a instrução seguinte a do...while.
+The instruction will be executed once before the condition is checked. To execute multiple statements use a block declaration *({ ... })* to group them together. If the condition is true, then the loop will be executed again. At the end of each run, the condition is checked. When the condition contained in the while is false, the loop execution is terminated and control is passed to the statement following do...while.
 
 ##
-No exemplo a seguir, o laço é executado pelo menos uma vez e irá executar até que i seja menor que 5.
 
+In the following example, the loop runs at least once and will run until i is less than 5.
 
 ```javascript
-do {
+of {
   i += 1;
   console.log(i);
-} while (i < 5);
+} while(i < 5);
 ```
-##                
+##
                 
-# Declaração while
-Uma declaração while executa suas instruções, desde que uma condição especificada seja avaliada como verdadeira. Segue uma declaração while: 
+# while statement
+A while statement executes its statements as long as a specified condition evaluates to true. Here's a while statement:
 
 
 ```javascript
-while (condicao)
-  declaracao
+while (condition)
+  declaration
 ```
 ##
-Se a condição se tornar falsa,  a declaração dentro do laço para a execução e o controle é passado para a instrução após o laço.
+If the condition becomes false, the statement inside the loop stops execution and control is passed to the statement after the loop.
 
-O teste da condição ocorre antes que o laço seja executado. Desta forma se a condição for verdadeira o laço executará e testará a condição novamente. Se a condição for falsa o laço termina e passa o controle para as instruções após o laço.
+The condition test takes place before the loop is executed. That way if the condition is true the loop will execute and test the condition again. If the condition is false, the loop terminates and passes control to the instructions after the loop.
 
-Para executar múltiplas declarações, use uma declaração em bloco ({ ... }) para agrupar essas declarações.
+To execute multiple statements, use a block statement ({ ... }) to group these statements.
 
 ```javascript
-do {
+of {
   i += 1;
   console.log(i);
-} while (i < 5);
+} while(i < 5);
 ```
 
-# Primeiro exemplo
-#### O while a seguir executará enquanto n for menor que três:
+# First example
+#### The following while will execute as long as n is less than three:
 ```javascript
 n = 0;
 x = 0;
@@ -353,74 +356,70 @@ while (n < 3) {
 }
 ```
 
-#### A cada iteração, o laço incrementa n e adiciona este valor para x. Portanto, x e n recebem os seguintes valores:
+#### At each iteration, the loop increments n and adds this value to x. Therefore, x and n receive the following values:
 
+* After running for the first time: n = 1 and x = 1
+* After the second time: n = 2 and x = 3
+* After the third time: n = 3 and x = 6
 
+##### After executing the third time, the condition n < 3 will no longer be true, so the loop will terminate.
 
+# Second example
 
-
-* Depois de executar pela primeira vez: n = 1 e x = 1
-* Depois da segunda vez: n = 2 e x = 3
-* Depois da terceira vez: n = 3 e x = 6
-
-##### Depois de executar pela terceira vez, a condição n < 3 não será mais verdadeira, então o laço encerrará.
-
-# Segundo exemplo
-
-Evite laços infinitos. Tenha certeza que a condição do laço eventualmente será falsa; caso contrário, o laço nunca terminará. O while a seguir executará para sempre pois sua condição nunca será falsa:
+Avoid infinite loops. Make sure the loop condition will eventually be false; otherwise the loop will never end. The following while will run forever as its condition will never be false:
 
 ```javascript
 while (true) {
-  console.log("Olá, mundo");
+  console.log("Hello, Guys");
 }
 ```
 ##
   
-# Declaração label
-Um label provê um identificador que permite que este seja referenciado em outro lugar no seu programa. Por exemplo, você pode usar uma label para identificar um laço, e então usar *break* ou *continue* para indicar quando o programa deverá interromper o laço ou continuar sua execução.
+# Label declaration
+A label provides an identifier that allows it to be referenced elsewhere in your program. For example, you can use a label to identify a loop, and then use *break* or *continue* to indicate when the program should break the loop or continue its execution.
 
-Segue a sintaxe da instrução label:
+Here is the syntax of the label statement:
 
 
 
 ```javascript
-label : declaracao
+label : declaration
 ```
-Um label pode usar qualquer idenficador que não seja uma palavra reservada do JavaScript. Você pode identificar qualquer instrução com um label.
+A label can use any identifier that is not a JavaScript reserved word. You can identify any instruction with a label.
 
 
 
+# Example
 
-# Exemplo
-#### Neste exemplo, o label markLoop idenfica um laço while.
+#### In this example, the markLoop label identifies a while loop
+
 ```javascript
 markLoop:
 while (theMark == true) {
-   facaAlgo();
+   do something();
 }
 ```
-## 
+
+##
   
-# Declaração break
+# break statement
 
-Use break para terminar laços, *switch*, ou um conjunto que utiliza label.
+Use break to end loops, *switch*, or a set that uses label.
 
+* When you use *break* without a label, it will immediately terminate the innermost loop *while*, *do-while*, *for*, or *switch* and transfer control to the next statement.
 
-* Quando você utiliza *break* sem um label, ele encerrará imediatamente o laço mais interno *while*, *do-while*, *for*, ou *switch* e transferirá o controle para a próxima instrução.
+* When you use break with a label, it will terminate the specific label.
 
-* Quando você utiliza break com um label, ele encerrará o label específico.
+#### Here is the break syntax
 
-#### Segue a sintaxe do break:
+* break;
+* break label;
 
- - break;
- - break label;
-
- Na primeira opção será encerrado o laço de repetição mais interno ou switch. Já na segunda opção será encerrada o bloco de código referente a label.
+ In the first option, the innermost loop or switch will be terminated. In the second option, the code block referring to the label will be closed.
   
-  
-## Primeiro exemplo
+## First example
 
-O exemplo a seguir percorre os elementos de um array até que ele encontre o índice do elemento que possui o valor contido em theValue:
+The following example loops through the elements of an array until it finds the index of the element that has the value contained in theValue:
 
 
 ```javascript
@@ -432,20 +431,20 @@ for (i = 0; i < a.length; i++) {
 ```
 
 
-## Segundo exemplo
+## Second example
 
 ```javascript
 var x = 0;
 var z = 0
-labelCancelaLaco: while (true) {
-  console.log("Laço exterior: " + x);
+labelCancelLoop: while (true) {
+  console.log("outer loop: " + x);
   x += 1;
   z = 1;
   while (true) {
-    console.log("Laço interior: " + z);
+    console.log("inner loop: " + z);
     z += 1;
     if (z === 10 && x === 10) {
-      break labelCancelaLaco;
+      break labelCancelLoop;
     } else if (z === 10) {
       break;
     }
@@ -455,25 +454,23 @@ labelCancelaLaco: while (true) {
 ## 
 
 
-# Declaração continue
-A declaração continue pode ser usada para reiniciar uma instrução while, do-while, for, ou label.
+# Statement continue
+The continue statement can be used to restart a while, do-while, for, or label statement.
 
-* Quando você utiliza continue sem uma label, ele encerrará a iteração atual mais interna de uma instrução while, do-while, ou for e continuará a execução do laço a partir da próxima iteração. Ao contrário da instrução break, continue não encerra a execução completa do laço. Em um laço while, ele voltará para a condição. Em um laço for, ele pulará para a expressão de incrementação.
+* When you use continue without a label, it will terminate the current innermost iteration of a while, do-while, or for statement and continue loop execution from the next iteration. Unlike the break statement, continue does not terminate the loop's complete execution. In a while loop it will return to the condition. In a for loop it will jump to the increment expression.
 
-* Quando você utiliza continue com uma label, o continue será aplicado ao laço identificado por esta label. 
+* When you use continue with a label, the continue will be applied to the loop identified by that label.
 
-#### Segue a sintaxe do break:
+#### Here is the break syntax:
 
  #### 1. break;
  #### 2. continue label;
 
-## 
+##
                          
-## Primeiro exemplo
+## First example
 
-O exemplo a seguir mostra um laço while utlizando continue que executará quando o valor de i for igual a 3. Desta forma, n recebe os valores um, três, sete, e doze.
-
-
+The following example shows a while loop using continue that will execute when the value of i is equal to 3. This way, n takes the values ​​one, three, seven, and twelve.
 
 ```javascript
 i = 0;
@@ -481,19 +478,18 @@ n = 0;
 while (i < 5) {
   i++;
   if (i == 3) {
-    continue;
+    continues;
   }
   n += i;
 }
 
 ```
 
+## Second example
 
-## Segundo exemplo
+A label checkiandj statement contains a label checkj statement. If continue is executed, the program ends the current iteration of checkj and starts the next iteration. Every time continue is executed, checkj will restart until the while condition is false. When this happens checkiandj will execute until its condition is false.
 
-Uma instrução label checkiandj contém uma instrução label checkj. Se o continue for executado, o programa terminará a iteração atual de checkj e começará a próxima iteração. Toda vez que o continue for executado, checkj recomeçará até que a condição do while for falsa. Quando isto ocorrer checkiandj executará até que sua condição seja falsa.
-
-* Se o continue estivesse referenciando checkiandj, o programa deveria continuar do topo de checkiandj.
+* If continue was referencing checkiandj, the program should continue from the top of checkiandj.
 
 ```javascript
 checkiandj:
@@ -507,7 +503,7 @@ checkiandj:
         if ((j % 2) == 0) {
           continue checkj;
         }
-        console.log(j + " é estranho.");
+        console.log(j + " is stranger.");
       }
       console.log("i = " + i);
       console.log("j = " + j);
@@ -516,20 +512,20 @@ checkiandj:
 ## 
 
 
-# Declaração for...in
-A declaração *for...in* executa iterações a partir de uma variável específica, percorrendo todas as propriedades de um objeto.
+# Declaration for...in
+The *for...in* statement executes iterations from a specific variable, iterating through all the properties of an object.
 
-Para cada propriedade distinta, o JavaScript executará uma iteração. Segue a sintaxe:
+For each distinct property, JavaScript will iterate. Here's the syntax:
 ```
-for (variavel in objeto) {
-  declaracoes
+for (variable in object) {
+  statements
 }
 ```
 
 
-## Exemplo
+## Example
 
-A função a seguir recebe em seu argumento um objeto e o nome deste objeto. Então executará uma iteração para cada elemento e retornará uma lista de string, que irá conter o nome da propriedade e seu valor.
+The following function takes in its argument an object and the name of this object. It will then iterate through each element and return a string list, which will contain the property name and its value.
 
 
 
@@ -544,7 +540,7 @@ function dump_props(obj, obj_name) {
 }
 
 ```
-#### Para um objeto chamado car com propriedades make e model, o resultado será:
+#### For an object named car with make and model properties, the result will be:
 
 ```
 car.make = Ford
@@ -553,25 +549,24 @@ car.model = Mustang
 ```
 ### Arrays
 
-Embora seja tentador usar esta forma para interagir com os elementos de um Array, a declaração for...in irá retornar o nome pré-definido da propriedade ao invés do seu index numérico. Assim é melhor usar o tradicional for com index numérico quando interagir com arrays, pois o for...in interage com as propriedades definidas pelo programador ao invés dos elementos do array.
+While it is tempting to use this form to interact with elements of an Array, the for...in statement will return the default name of the property rather than its numeric index. So it's better to use the traditional for with numeric index when interacting with arrays, as for...in interacts with programmer-defined properties rather than array elements.
 
 ## 
 
 
-# Declaração for...of
- A declaração *for...of* cria uma laço com objetos interativos ((incluindo, Array, Map, Set, assim por conseguinte ), executando uma iteração para o valor de cada propriedade distinta.
+# Declaration for...of
+
+ The *for...of* statement loops through interactive objects ((including, Array, Map, Set, so forth), performing an iteration for the value of each distinct property.
 
 ```
-for (variavel of objeto) {
-  declaracoes
+for (variable of object) {
+  statements
 }
 ```
 
-O exemplo a seguir mostra a diferença entre o for...of e o for...in. Enquanto o for...in interage com o nome das propriedades, o for...of interage com o valor das propriedades.
+The following example shows the difference between for...of and for...in. While for...in interacts with the name of properties, for...of interacts with the value of properties.
 
-
-
-## Exemplo
+## Example
 
 
 
@@ -589,3 +584,4 @@ for (let i of arr) {
 }
 ```
 ##                          
+----------------
