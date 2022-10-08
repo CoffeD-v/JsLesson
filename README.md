@@ -1,7 +1,33 @@
+# Javascript Lesson
 
-# Coffeloper Javascript Lesson
+[🇧🇷 Clique aqui para acessar a versão em português.](./README.pt-br.md)
 
-[:brazil: Clique aqui para acessar a versão em português.](./README.pt-br.md)
+
+## Objective 
+This repository is educational and aimed at anyone who is starting to learn javascript or even starting to program, because whether or not javascript is a very popular language when it comes to learning a new language
+
+## How to contribute?
+
+**Help the other who is starting**
+- It's not something that difficult, just think like a person who is learning, and show the content in a cohesive way, it can be with examples in code or even within a markdown of a specific theme
+
+**Correction**
+- Fixing it being wrong code or wrong writing
+- Putting links to support if you need it
+
+**New modules**
+- Create some module that has to do with the Javascript universe
+- Create modules for a given language
+
+**Open issues**
+- If there is a need for a new new feature, put it in an issue and if necessary, you can then create the PR with the change
+- If you have any doubts
+- If you have problems related to the project
+
+**Open PR'S**
+- If allowed after opening the issue, the PR will go through a review if necessary and useful it will be merged
+
+**Open-source brooo🤞**
 
 # Flow Control and Error Handling
 
