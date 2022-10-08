@@ -1,4 +1,33 @@
+# Javascript Lesson
 
+[:en: Clique aqui para acessar a versão em inglês.](./README.pt-br.md)
+
+
+## Objetivo 
+Este repositório é de cunho educativo e voltado paraq quem está começando a aprender a javascript ou até mesmo começando a programar, por que querendo ou não javascript é uma linguagem muito procurada quando se fala em aprender uma linguagem nova
+
+## Como contribuir?
+
+**Ajudar o outro que está começando**
+- Não é algo tão dificil, basta pensar como uma pessoa que está aprendendo, e mostrar de forma coesa o conteúo, pode ser com exemplos em código ou até mesmo dentro de um markdown de um tema em especifico
+
+**Correção**
+- Corrigindo sendo um código errado ou uma escrita errada
+- Colocando links para suporte caso precise
+
+**Novos módulos**
+- Criar algum módulo que tenha haver com o universo de Javascript
+- Criar módulos para determinada lingua
+
+**Abrir issues**
+- Caso haja necessidade de nova feature nova coloque em uma issue e se for necessária pode criar então o PR com a alteração
+- Caso tenha dúvidas
+- Caso tenha problemas relacionados com o projeto
+
+**Abrir PR'S**
+- Caso for permitido depois de abrir a issue, a PR passará por uma revisão caso for necessária e útil ela será mergiada
+
+**Open-source brooo🤞**
 
 # Controle de Fluxo e Manipulação de Erro
 
