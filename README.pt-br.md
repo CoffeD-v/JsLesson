@@ -1,8 +1,5 @@
 # Javascript Lesson
 
-[:en: Clique aqui para acessar a versão em inglês.](./README.pt-br.md)
-
-
 ## Objetivo 
 Este repositório é de cunho educativo e voltado paraq quem está começando a aprender a javascript ou até mesmo começando a programar, por que querendo ou não javascript é uma linguagem muito procurada quando se fala em aprender uma linguagem nova
 
