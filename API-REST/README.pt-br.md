@@ -1,17 +1,14 @@
-# Some API REST simple for data consume
+# Uma API REST simples para consumo de dados
 
-[🇧🇷 Clique aqui para acessar a versão em português.](./README.pt-br.md)
+Para subir o projeto no ar com SQLite, copie o arquivo `.env_example` para `.env`.  
 
-
-To deploy the project with SQLite, copy the `.env_example` file to `.env`.  
-
-You will also need to add a secret key to the `.env` file:
+Você também precisará adicionar uma secret key no arquivo `.env`:
 
 ```
-TOKEN_SECRET='your_secret_key_here'
+TOKEN_SECRET='sua_secret_key_aqui'
 ```
 
-Execute the following commands:
+Execute os comandos abaixo:
 
 ```
 npm i
@@ -20,11 +17,11 @@ npx sequelize db:seed:all
 npm run dev
 ```
 
-At this point, your API should be running at http://127.0.0.1:3001/.
+Neste ponto sua API deverá está rodando no endereço http://127.0.0.1:3001/.
 
-If you want to migrate to MySQL/MariaDB, edit the database settings in the `.env`, file and also configure `src/config/database.js`.
+Caso queira migrar para MySQL/MariaDB, edite as configurações de base de dados no arquivo `.env`, configure também o `src/config/database.js`.
 
-For SQLite, the settings are:
+Para SQLite as configurações são:
 
 ```javascript
 require('dotenv').config();
@@ -42,7 +39,7 @@ module.exports = {
 };
 ```
 
-For MySQL/MariaDB, the settings are:
+Para MySQL/MariaDB as configurações são:
 
 ```javascript
 require('dotenv').config();
@@ -68,14 +65,14 @@ module.exports = {
 };
 ```
 
-Note that the settings starting with `process.env.` come from the `.env` file.
+Perceba que as configurações começando com `process.env.` vem do arquivo `.env`.
 
-The user and password data for the seed files are:
+Os dados de usuário e senha dos arquivos de seed são:
 
 - email = admin@email.com
-- password = 123456
+- senha = 123456
 
-You can obtain the JWT token at the `/tokens`, route by sending the following JSON data:
+Você pode obter o token JWT na rota `/tokens`, passando os dados JSON:
 
 ```json
 {
