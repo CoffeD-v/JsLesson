@@ -2,6 +2,7 @@
 
 [🇧🇷 Clique aqui para acessar a versão em português.](./README.pt-br.md)
 
+GAUCHO IS HERE ...
 
 ## Objective 
 This repository is educational and aimed at anyone who is starting to learn javascript or even starting to program, because whether or not javascript is a very popular language when it comes to learning a new language
