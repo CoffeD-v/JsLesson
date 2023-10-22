@@ -1,299 +1,299 @@
-# Guia de estilo CSS em JavaScript
+# CSS and JavaScript style guide
 
 
-[:brazil: Clique aqui para acessar a versão em português.](./README.pt-br.md)
+[:brazil: Click here to access the verses in Portuguese.](./README.pt-br.md)
 
-*Uma abordagem bastante razoável para CSS-in-JavaScript*
+*This approach is based on CSS-in-JavaScript*
 
-## Índice
+## Tip
 
-1. [Nomeação](#nomeação)
-1. [Pedido](#pedido)
-1. [Aninhamento](#aninhamento)
+1. [Nomination](#nomination)
+1. [Order](#order)
+1. [Nesting](#nesting)
 1. [Inline](#inline)
-1. [Temas](#temas)
+1. [Themes](#themes)
 
-## Nomenclatura
+## Nomenclature
 
-- Use camelCase para chaves de objeto (ou seja, "seletores").
+- Use camelCase for object keys (i.e. "selectors").
 
-    > Por quê? Nós acessamos essas chaves como propriedades no objeto `styles` no componente, então é mais conveniente usar camelCase.
+    > Why? We tried this as properties of no `styles` object not included, but it is convenient to use camelCase.
 
-    ``` js
-    // mau
+    ```js
+    // bad
     {
-      'triângulo das Bermudas': {
-        Mostrar nenhum',
+      'Bermuda Triangle': {
+        Show none',
       },
     }
 
-    // Boa
+    // Good
     {
-      triângulo das Bermudas: {
-        Mostrar nenhum',
+      Bermuda Triangle: {
+        Show none',
       },
     }
     ```
 
-- Use um sublinhado para modificadores de outros estilos.
+- Use a subtext to modify other styles.
 
-   > Por quê? Semelhante ao BEM, essa convenção de nomenclatura deixa claro que os estilos destinam-se a modificar o elemento precedido pelo sublinhado. Os sublinhados não precisam ser citados, por isso são preferidos a outros caracteres, como traços.
+   > Why? Before BEM, there is a clear naming agreement that styles are intended to modify the previously mentioned element. These captions are not specified here as they are not preferred by other characters like their traits.
 
-    ``` js
-    // mau
+    ```js
+    // bad
     {
-      bruce Banner: {
-        cor: 'rosa',
-        transição: 'cor 10',
+      Bruce Flag: {
+        horn: 'rose',
+        translation: 'horn 10',
       },
 
       bruceBannerTheHulk: {
-        cor verde',
+        green horn',
       },
     }
 
-    // Boa
+    // Good
     {
-      bruce Banner: {
-        cor: 'rosa',
-        transição: 'cor 10',
+      Bruce Flag: {
+        horn: 'rose',
+        translation: 'color 10',
       },
 
       bruceBanner_theHulk: {
-        cor verde',
+        green horn',
       },
     }
     ```
 
-- Use `selectorName_fallback` para conjuntos de estilos de fallback.
+- Use `selectorName_fallback` for fallback style sets.
 
-    > Por quê? Semelhante aos modificadores, manter a nomenclatura consistente ajuda a revelar a relação desses estilos com os estilos que os substituem em navegadores mais adequados.
+    > Why? Similar to modifiers, keeping the naming consistent helps reveal the relationship of these styles to the styles that replace them in better browsers.
 
     ``` js
-    // mau
+    // bad
     {
-      músculos: {
-        exibição: 'flex',
+      muscles: {
+        display: 'flex',
       },
 
       muscle_sadBears: {
-        largura: '100%',
+        width: '100%',
       },
     }
 
-    // Boa
+    // Good
     {
-      músculos: {
-        exibição: 'flex',
+      muscles: {
+        display: 'flex',
       },
 
       muscle_fallback: {
-        largura: '100%',
+        width: '100%',
       },
     }
     ```
 
-- Use um seletor separado para conjuntos de estilos de fallback.
+- Use a separate selector for fallback style sets.
 
-    > Por quê? Manter estilos de fallback contidos em um objeto separado esclarece sua finalidade, o que melhora a legibilidade.
+    > Why? Keeping fallback styles contained in a separate object clarifies their purpose, which improves readability.
 
     ``` js
-    // mau
+    // bad
     {
-      músculos: {
-        exibição: 'flex',
+      muscles: {
+        display: 'flex',
       },
 
-      deixei: {
+      I left: {
         flexGrow: 1,
-        display: 'bloco em linha',
+        display: 'inline block',
       },
 
-      certo: {
-        display: 'bloco em linha',
+      right: {
+        display: 'inline block',
       },
     }
 
- // Boa
+ // Good
     {
-      músculos: {
-        exibição: 'flex',
+      muscles: {
+        display: 'flex',
       },
 
-      deixei: {
+      I left: {
         flexGrow: 1,
       },
 
       left_fallback: {
-        display: 'bloco em linha',
+        display: 'inline block',
       },
 
       right_fallback: {
-        display: 'bloco em linha',
+        display: 'inline block',
       },
     }
     ```
 
-- Use nomes independentes de dispositivo (por exemplo, "pequeno", "médio" e "grande") para nomear pontos de interrupção de consulta de mídia.
+- Use device-independent names (e.g. "small", "medium", and "large") to name media query breakpoints.
 
-    > Por quê? Nomes comumente usados ​​como "telefone", "tablet" e "desktop" não correspondem às características dos dispositivos no mundo real. Usar esses nomes define as expectativas erradas.
+    > Why? Commonly used names like "phone", "tablet" and "desktop" do not correspond to the characteristics of devices in the real world. Using these names sets the wrong expectations.
 
     ``` js
-    // mau
-    pontos de interrupção const = {
+    // bad
+    const breakpoints = {
       mobile: '@media (max-width: 639px)',
       tablet: '@media (max-width: 1047px)',
       desktop: '@media (min-width: 1048px)',
     };
 
-    // Boa
-    pontos de interrupção const = {
+    // Good
+    const breakpoints = {
       small: '@media (max-width: 639px)',
       medium: '@media (max-width: 1047px)',
-      grande: '@media (largura mínima: 1048px)',
+      large: '@media (min-width: 1048px)',
     };
     ```
 
-## Encomenda
+## Order
 
-- Definir estilos após o componente.
+- Set styles after the component.
 
-    > Por quê? Usamos um componente de ordem superior para tematizar nossos estilos, que é naturalmente usado após a definição do componente. Passar o objeto de estilos diretamente para esta função reduz a indireção.
+    > Why? We use a higher-order component to theme our styles, which is naturally used after the component is defined. Passing the styles object directly to this function reduces indirection.
 
     ``` jsx
-    // mau
-    estilos const = {
-      recipiente: {
-        display: 'bloco em linha',
+    // bad
+    const styles = {
+      container: {
+        display: 'inline block',
       },
     };
 
-    function MeuComponente({ estilos }) {
-      Retorna (
+    function MyComponent({ styles }) {
+      Returns (
         <div {...css(styles.container)}>
-          Nunca duvide que um pequeno grupo de cidadãos atenciosos e comprometidos possa
-          mudar o mundo. Na verdade, é a única coisa que já teve.
+          Never doubt that a small group of thoughtful, committed citizens can
+          change the world. In fact, it's the only thing he's ever had.
         </div>
       );
     }
 
     export default withStyles(() => styles)(MyComponent);
 
-    // Boa
-    function MeuComponente({ estilos }) {
-      Retorna (
+    // Good
+    function MyComponent({ styles }) {
+      Returns (
         <div {...css(styles.container)}>
-          Nunca duvide que um pequeno grupo de cidadãos atenciosos e comprometidos possa
-          mudar o mundo. Na verdade, é a única coisa que já teve.
+          Never doubt that a small group of thoughtful, committed citizens can
+          change the world. In fact, it's the only thing he's ever had.
         </div>
       );
     }
 
     export default withStyles(() => ({
-      recipiente: {
-        display: 'bloco em linha',
+      container: {
+        display: 'inline block',
       },
-    }))(MeuComponente);
+    }))(MyComponent);
     ```
 
-## Aninhamento
+## Nesting
 
-- Deixe uma linha em branco entre blocos adjacentes no mesmo nível de recuo.
+- Leave a blank line between adjacent blocks at the same indentation level.
 
-    > Por quê? O espaço em branco melhora a legibilidade e reduz a probabilidade de conflitos de mesclagem.
+    > Why? White space improves readability and reduces the likelihood of merge conflicts.
 
     ``` js
-    // mau
+    // bad
     {
       Big Bang: {
-        display: 'bloco em linha',
-        '::antes da': {
-          contente: "''",
+        display: 'inline block',
+        '::before': {
+          happy: "''",
         },
       },
-      universo: {
-        fronteira: 'nenhum',
+      universe: {
+        border: 'none',
       },
     }
 
-    // Boa
+    // Good
     {
       Big Bang: {
-        display: 'bloco em linha',
+        display: 'inline block',
 
-        '::antes da': {
-          contente: "''",
+        '::before': {
+          happy: "''",
         },
       },
 
-      universo: {
-        fronteira: 'nenhum',
+      universe: {
+        border: 'none',
       },
     }
     ```
 
-## Em linha
+## In line
 
-- Use estilos inline para estilos com alta cardinalidade (por exemplo, usa o valor de um prop) e não para estilos com baixa cardinalidade.
+- Use inline styles for styles with high cardinality (e.g. uses the value of a prop) and not for styles with low cardinality.
 
-    > Por quê? Gerar folhas de estilo temáticas pode ser caro, então elas são melhores para conjuntos discretos de estilos.
+    > Why? Generating themed stylesheets can be expensive, so they are best for discrete sets of styles.
 
     ``` jsx
-    // mau
-    exportar função padrão MeuComponente({ espaçamento }) {
-      Retorna (
-        <div style={{ display: 'table', margin: espaçamento }} />
+    // bad
+    export default function MyComponent({ spacing }) {
+      Returns (
+        <div style={{ display: 'table', margin: spacing }} />
       );
     }
 
-// Boa
-    function MeuComponente({ estilos, espaçamento }) {
-      Retorna (
-        <div {...css(styles.periodic, {margem: espaçamento })} />
+// Good
+    function MyComponent({ styles, spacing }) {
+      Returns (
+        <div {...css(styles.periodic, {margin: spacing })} />
       );
     }
     export default withStyles(() => ({
-      periódico: {
-        exibição: 'mesa',
+      periodical: {
+        display: 'table',
       },
-    }))(MeuComponente);
+    }))(MyComponent);
     ```
 
-## Temas
+## Themes
 
-- Use uma camada de abstração como [react-with-styles](https://github.com/airbnb/react-with-styles) que permite a criação de temas. *react-with-styles nos dá coisas como `withStyles()`, `ThemedStyleSheet` e `css()` que são usados ​​em alguns dos exemplos deste documento.*
+- Use an abstraction layer like [react-with-styles](https://github.com/airbnb/react-with-styles) that allows you to create themes. *react-with-styles gives us things like `withStyles()`, `ThemedStyleSheet` and `css()` which are used in some of the examples in this document.*
 
-  > Por quê? É útil ter um conjunto de variáveis ​​compartilhadas para estilizar seus componentes. Usar uma camada de abstração torna isso mais conveniente. Além disso, isso pode ajudar a evitar que seus componentes sejam fortemente acoplados a qualquer implementação subjacente específica, o que lhe dá mais liberdade.
+  > Why? It's useful to have a set of shared variables to style your components. Using an abstraction layer makes this more convenient. Additionally, this can help prevent your components from being tightly coupled to any specific underlying implementation, which gives you more freedom.
 
-- Defina cores apenas em temas.
+- Set colors in themes only.
 
     ``` js
-    // mau
+    // bad
     export default withStyles(() => ({
       Chuck Norris: {
-        cor: '#bada55',
+        color: '#bada55',
       },
-    }))(MeuComponente);
+    }))(MyComponent);
 
-    // Boa
+    // Good
     export default withStyles(({ color }) => ({
       Chuck Norris: {
-        cor: color.badass,
+        color: color.badass,
       },
-    }))(MeuComponente);
+    }))(MyComponent);
     ```
 
-- Defina fontes apenas em temas.
+- Set fonts in themes only.
 
     ``` js
-    // mau
+    // bad
     export default withStyles(() => ({
-      Torre de Pisa: {
-        fontStyle: 'itálico',
+      Tower of Pisa: {
+        fontStyle: 'italic',
       },
-    }))(MeuComponente);
+    }))(MyComponent);
 
-    // good
+    //good
     export default withStyles(({ font }) => ({
       towerOfPisa: {
         fontStyle: font.italic,
@@ -301,10 +301,10 @@
     }))(MyComponent);
     ```
 
-- Define fonts as sets of related styles.
+- Defines fonts as sets of related styles.
 
     ```js
-    // bad
+    //bad
     export default withStyles(() => ({
       towerOfPisa: {
         fontFamily: 'Italiana, "Times New Roman", serif',
@@ -314,7 +314,7 @@
       },
     }))(MyComponent);
 
-    // good
+    //good
     export default withStyles(({ font }) => ({
       towerOfPisa: {
         ...font.italian,
@@ -322,10 +322,10 @@
     }))(MyComponent);
     ```
 
-- Define base grid units in theme (either as a value or a function that takes a multiplier).
+- Defines base grid units in theme (either as a value or a function that takes a multiplier).
 
     ```js
-    // bad
+    //bad
     export default withStyles(() => ({
       rip: {
         bottom: '-6912px', // 6 feet
